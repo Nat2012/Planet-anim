@@ -1,229 +1,325 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Courier New', Courier, monospacew;
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Courier New", Courier, monospacew;
 }
 
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    overflow: hidden;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
 }
 
-.planet{
-    display: flex;
-    flex-direction: column;
+p {
+  color: #fff;
+  font-size: 1em;
+  text-align: center;
+  font-weight: 600;
 }
 
-.planet h2{
-    color: #fff;
-    font-size: 4em;
-    margin-bottom: 40px;
-    font-weight: 600;
-}
-.planet .container{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    -webkit-box-reflect: below 1px linear-gradient(#0001, #0002);
+
+
+.planet {
+  display: flex;
+  flex-direction: column;
 }
 
-.planetEarth{
-    position: relative;
-    min-width: 50%;
-    height: 100vh;
-    align-items: center;
-    background: #182357;
+.planet h2 {
+  color: #fff;
+  font-size: 4em;
+  margin-bottom: 40px;
+  text-align: center;
+  font-weight: 600;
+}
+.planet .container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  -webkit-box-reflect: below 1px linear-gradient(#0001, #0002);
 }
 
-.planetEarth .loader{
-    position: relative;
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    animation: animate 4s linear infinite;
+.planetEarth {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  background: #182357;
 }
 
-@keyframes animate{
-    0%{
-        transform: rotate(0deg);
-    }
-
-    100%{
-        transform: rotate(360deg);
-    }
-
+.planetEarth .loader {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  animation: animate 4s linear infinite;
 }
 
-.planetEarth .loader::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(to top, transparent, rgba(0,255,249,0.4));
-    background-size: 200px 360px;
-    background-repeat: no-repeat;
-    border-top-left-radius: 200px;
-    border-bottom-left-radius: 200px;
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-.planetEarth .loader:after{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 10px;
-    width: 10px;
-    background: #00fff9;
-    border-radius: 50%;
-    z-index: 10;
-    box-shadow: 0 0 10px #00fff9,
-                0 0 20px #00fff9,
-                0 0 30px #00fff9,
-                0 0 40px #00fff9,
-                0 0 50px #00fff9,
-                0 0 60px #00fff9,
-                0 0 70px #00fff9,
-                0 0 80px #00fff9,
-                0 0 90px #00fff9,
-                0 0 100px #00fff9;
+.planetEarth .loader::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to top, transparent, rgba(0, 255, 249, 0.4));
+  background-size: 200px 360px;
+  background-repeat: no-repeat;
+  border-top-left-radius: 200px;
+  border-bottom-left-radius: 200px;
 }
 
-.planetEarth .loader span{
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
-    background: #182357;
-    border-radius: 50%;
+.planetEarth .loader:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 10px;
+  width: 10px;
+  background: #00fff9;
+  border-radius: 50%;
+  z-index: 10;
+  box-shadow: 0 0 10px #00fff9, 0 0 20px #00fff9, 0 0 30px #00fff9,
+    0 0 40px #00fff9, 0 0 50px #00fff9, 0 0 60px #00fff9, 0 0 70px #00fff9,
+    0 0 80px #00fff9, 0 0 90px #00fff9, 0 0 100px #00fff9;
 }
 
-.earth{
-    position: absolute;
-    width: 340px;
-    height: 340px;
-    background: url(earth.jpg);
-    border-radius: 50%;
-    background-size: cover;
-    box-shadow: inset 0 0 20px #03a9f4,
-             0 0 120px #03a9f4;
-    animation: animateEarth 20s linear infinite;
-
+.planetEarth .loader span {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  background: #182357;
+  border-radius: 50%;
 }
 
-@keyframes animateEarth{
-    0%{
-        background-position: 0;
-    }
-
-    100%{ 
-        background-position: 162.5%;
-    }
+.earth {
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  background: url(earth.jpg);
+  border-radius: 50%;
+  background-size: cover;
+  box-shadow: inset 0 0 20px #03a9f4, 0 0 120px #03a9f4;
+  animation: animateEarth 20s linear infinite;
 }
 
-.planetMars{
-    position: relative;
-    min-width: 50%;
-    height: 100vh;
-    align-items: center;
-    background: #190703;
+.earth:hover {
+  box-shadow: inset 0 0 20px #03ccf4, 0 0 120px #03ccf4;
 }
 
-.planetMars .loader{
-    position: relative;
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    animation: animate 4s linear infinite;
+@keyframes animateEarth {
+  0% {
+    background-position: 0;
+  }
+
+  100% {
+    background-position: 162.5%;
+  }
 }
 
-@keyframes animate{
-    0%{
-        transform: rotate(0deg);
-    }
-
-    100%{
-        transform: rotate(360deg);
-    }
-
+.planetMars {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  background: #190703;
 }
 
-.planetMars .loader::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(to top, transparent, rgba(255,87,34.4));
-    background-size: 200px 360px;
-    background-repeat: no-repeat;
-    border-top-left-radius: 200px;
-    border-bottom-left-radius: 200px;
+.planetMars .loader {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  animation: animate 6s linear infinite;
 }
 
-.planetMars .loader:after{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 10px;
-    width: 10px;
-    background: #ff5722;
-    border-radius: 50%;
-    z-index: 10;
-    box-shadow: 0 0 10px #ff5722,
-                0 0 20px #ff5722,
-                0 0 30px #ff5722,
-                0 0 40px #ff5722,
-                0 0 50px #ff5722,
-                0 0 60px #ff5722,
-                0 0 70px #ff5722,
-                0 0 80px #ff5722,
-                0 0 90px #ff5722,
-                0 0 100px #ff5722;
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-.planetMars .loader span{
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
-    background: #190703;
-    border-radius: 50%;
+.planetMars .loader::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to top, transparent, rgba(255, 87, 34.4));
+  background-size: 200px 360px;
+  background-repeat: no-repeat;
+  border-top-left-radius: 200px;
+  border-bottom-left-radius: 200px;
 }
 
-.mars{
-    position: absolute;
-    width: 340px;
-    height: 340px;
-    background: url(mars.jpg);
-    border-radius: 50%;
-    background-size: cover;
-    box-shadow: inset 0 0 20px #ff5722,
-             0 0 120px #ff5722;
-    animation: animateEarth 6s linear infinite;
-    animation-delay: -2s;
+.planetMars .loader:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 10px;
+  width: 10px;
+  background: #ff5722;
+  border-radius: 50%;
+  z-index: 10;
+  box-shadow: 0 0 10px #ff5722, 0 0 20px #ff5722, 0 0 30px #ff5722,
+    0 0 40px #ff5722, 0 0 50px #ff5722, 0 0 60px #ff5722, 0 0 70px #ff5722,
+    0 0 80px #ff5722, 0 0 90px #ff5722, 0 0 100px #ff5722;
 }
 
-@keyframes animateEarth{
-    0%{
-        background-position: 0;
-    }
+.planetMars .loader span {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  background: #190703;
+  border-radius: 50%;
+}
 
-    100%{ 
-        background-position: -340px;
-    }
+.mars {
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  background: url(mars.jpg);
+  border-radius: 50%;
+  background-size: cover;
+  box-shadow: inset 0 0 20px #ff5722, 0 0 120px #ff5722;
+  animation: animateMars 14s linear infinite;
+  animation-delay: -2s;
+}
+
+.mars:hover {
+  box-shadow: inset 0 0 20px #ff0202, 0 0 120px #ff0202;
+}
+
+@keyframes animateMars {
+  0% {
+    background-position: 0;
+  }
+
+  100% {
+    background-position: -340px;
+  }
+}
+
+.planetVenus {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  background: #b7980c;
+}
+
+.planetVenus .loader {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.planetVenus .loader::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to top, transparent, rgb(255, 234, 0));
+  background-size: 200px 360px;
+  background-repeat: no-repeat;
+  border-top-left-radius: 200px;
+  border-bottom-left-radius: 200px;
+}
+
+.planetVenus .loader:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 10px;
+  width: 10px;
+  background: #ffea00;
+  border-radius: 50%;
+  z-index: 10;
+  box-shadow: 0 0 10px #ffea00, 0 0 20px #ffea00, 0 0 30px #ffea00,
+    0 0 40px #ffea00, 0 0 50px #ffea00, 0 0 60px #ffea00, 0 0 70px #ffea00,
+    0 0 80px #ffea00, 0 0 90px #ffea00, 0 0 100px #ffea00;
+}
+
+.planetVenus .loader span {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  background: #b7980c;
+  border-radius: 50%;
+}
+
+.Venus {
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  background: url(Venus.jpg);
+  border-radius: 50%;
+  background-size: cover;
+  box-shadow: inset 0 0 20px #ffea00, 0 0 120px #ffea00;
+  animation: animateVenus 60s linear infinite;
+  animation-delay: -4s;
+}
+.Venus:hover {
+  box-shadow: inset 0 0 30px #ffff00, 0 0 150px #ffff00;
+}
+
+.Venus:fullscreen {
+  background: url(Venus.jpg);
+  border-radius: 50%;
+  background-size: cover;
+  box-shadow: inset 0 0 20px #ffea00, 0 0 120px #ffea00;
+}
+
+@keyframes animateVenus {
+  0% {
+    background-position: 0;
+  }
+
+  100% {
+    background-position: 340px;
+  }
 }

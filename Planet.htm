@@ -1,26 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Planet</title>
-    <link rel="stylesheet" href="Planet.css">
-</head>
-<body>
+    <link rel="stylesheet" href="Planet.css" />
+  </head>
+  <body>
     <div class="planet planetEarth">
+      <div class="planetselect">
         <h2>Earth</h2>
         <div class="container">
-            <div class="loader"><span></span></div>
-            <div class="earth"></div>
+          <div class="loader"><span></span></div>
+          <div class="earth"></div>
+          <p><strong>Find out more about <a style="color: rgb(0, 170, 255);" href="https://en.wikipedia.org/wiki/Earth">earth</a></strong></p>
         </div>
+      </div>
     </div>
 
     <div class="planet planetMars">
-        <h2>Mars</h2>
-        <div class="container">
-            <div class="loader"><span></span></div>
-            <div class="mars"></div>
-        </div>
+      <h2>Mars</h2>
+      <div class="container">
+        <div class="loader"><span></span></div>
+        <div class="mars"></div>
+        <p><strong>Find out more about <a style="color: red;" href="https://en.wikipedia.org/wiki/Mars">mars</a></strong></p>
+      </div>
     </div>
-</body>
+
+    <div class="planet planetVenus">
+      <h2>Venus</h2>
+      <div class="container">
+        <div class="loader"><span></span></div>
+        <div class="Venus"></div>
+        <p><strong>Find out more about <a style="color: rgb(255, 234, 0);" href="https://en.wikipedia.org/wiki/Venus">venus</a></strong></p>
+      </div>
+    </div>
+
+    </div>
+
+    <script>
+  document.querySelectorAll('.planet').forEach((planet) => {
+    planet.addEventListener('click', () => {
+      // Get the planet name
+      const name = planet.querySelector('h2').textContent;
+
+      // Show popup with goofy or cool info
+      alert(`You clicked on ${name}!\nWelcome to Planet ${name}.`);
+
+      // You could add more logic here — like open a menu, show stats, trigger animation, etc.
+     
+    });
+
+  });
+  document.querySelectorAll('.planet').forEach((planet) => {
+    planet.addEventListener('mouseover', () => {
+
+      const name = planet.querySelector('h2').textContent;
+
+       if(name === 'Earth'){
+        var audio = new Audio('Nature.mp3');
+        audio.play();
+        audio.volume = 1;
+      }
+
+      console.log(name);
+      
+    });
+  })
+
+    </script>
+  </body>
 </html>
